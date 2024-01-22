@@ -3,7 +3,7 @@ package Lab_4;
 import Lab_4.AbstractClasses.AbstractCharacter;
 import Lab_4.Classes.*;
 import Lab_4.Exceptions.EngineException;
-import Lab_4.Exceptions.MovingToNonexistentPlaceException;
+import Lab_4.Exceptions.AccessToPrivateWalletException;
 import Lab_4.Exceptions.NotEnoughMoneyException;
 import Lab_4.Interfaces.ClassPredicate;
 
@@ -48,8 +48,8 @@ public class Main {
 
         System.out.println("\nchecked exception \n");
         try {
-            Julio.move(null);
-        } catch (MovingToNonexistentPlaceException e) {
+            Krabs.checkWallet();
+        } catch (AccessToPrivateWalletException e) {
             System.out.println(e.getMessage());
         }
 

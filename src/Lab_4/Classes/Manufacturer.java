@@ -4,6 +4,7 @@ import Lab_4.AbstractClasses.AbstractCharacter;
 import Lab_4.AbstractClasses.AbstractItem;
 import Lab_4.AbstractClasses.AbstractPlace;
 import Lab_4.Enums.Status;
+import Lab_4.Exceptions.AccessToPrivateWalletException;
 import Lab_4.Exceptions.EngineException;
 import Lab_4.Exceptions.NotEnoughMoneyException;
 import Lab_4.Interfaces.CanMoveByCar;
@@ -53,6 +54,14 @@ public class Manufacturer extends AbstractCharacter implements CanMoveByCar {
             wallet.money -= item.getItemPrice();
         } else {
             throw new NotEnoughMoneyException();
+        }
+    }
+
+    public void checkWallet() throws AccessToPrivateWalletException {
+        if (true) {
+            throw new AccessToPrivateWalletException();
+        } else {
+            System.out.println("У вас получилось сломать систему и получить доступ к чужому кошельку.");
         }
     }
 

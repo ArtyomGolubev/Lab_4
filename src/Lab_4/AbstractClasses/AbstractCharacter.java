@@ -1,7 +1,6 @@
 package Lab_4.AbstractClasses;
 
 import Lab_4.Enums.Status;
-import Lab_4.Exceptions.MovingToNonexistentPlaceException;
 import Lab_4.Interfaces.CanMove;
 import java.util.Objects;
 
@@ -42,13 +41,9 @@ public abstract class AbstractCharacter implements CanMove {
         place.addCharacter(this);
     }
 
-    public void move(AbstractPlace place) throws MovingToNonexistentPlaceException{
-        if (place != null) {
-            this.setWhereabouts(place);
-            System.out.println(this.name + " оказался в " + place.getPlaceName());
-        } else {
-            throw new MovingToNonexistentPlaceException();
-        }
+    public void move(AbstractPlace place) {
+        this.setWhereabouts(place);
+        System.out.println(this.name + " оказался в " + place.getPlaceName());
     }
 
     @Override
